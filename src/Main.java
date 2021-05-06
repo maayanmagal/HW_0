@@ -14,6 +14,26 @@ public class Main {
         /*
         TODO: Your code for part A is here...
          */
+        grade=grade/10;
+        switch (grade)
+        {
+            case 10:
+                System.out.println("Excellent");
+                break;
+            case 9:
+                System.out.println("Great");
+                break;
+            case 8:
+                System.out.println("Very Good");
+                break;
+            case 7:
+                System.out.println("Good");
+                break;
+            default:
+                System.out.println("OK");
+                break;
+
+        }
     }
 
     /**
