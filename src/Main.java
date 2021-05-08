@@ -49,13 +49,41 @@ public class Main {
      */
     public static String compressString(String stringToCompress) {
         String compressedString = "";
-
+        stringToCompress=toLower(stringToCompress);
+        int count=0;
+        char current=stringToCompress.charAt(0);
+        for(int i=0; i<stringToCompress.length();i++)
+        {
+            if(stringToCompress.charAt(i)==current)
+                count++;
+            else
+            {
+                compressedString+=current+""+count;
+                count=1;
+                current=stringToCompress.charAt(i);
+            }
+        }
+        compressedString+=current+""+count;
         /*
         TODO: Your code for part B1 is here...
         Note: you may change the given code, but you must not change the signature of the method.
          */
 
         return compressedString;
+    }
+    public static String toLower(String str)
+    {
+        String lower="";
+        char add='a';
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)>='A'&&str.charAt(i)<='Z')
+                add=(char)(str.charAt(i)+('a'-'A'));
+            else
+                add=str.charAt(i);
+            lower+=add;
+        }
+        return lower;
     }
 
     /**
